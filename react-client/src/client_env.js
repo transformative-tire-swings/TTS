@@ -1,1 +1,1 @@
-module.exports.client_env = {houndify_clientID: '5b6OUBiBOinCX-IHhFPTMg=='};
+module.exports.client_env = {houndify_clientID: 'Byf_ChsnhCMR9057BRRpKQ=='};

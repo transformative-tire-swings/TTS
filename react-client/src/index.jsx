@@ -14,7 +14,8 @@ class App extends React.Component {
     this.state = {
       response: {type: "text", api: "default", text: "This is your moment. Ask a question.", data: Object},
       location: {},
-      micOn: false
+      micOn: false,
+      textQuery: ''
     };
 
     const clientID = client_env.client_env.houndify_clientID;
@@ -99,12 +100,15 @@ class App extends React.Component {
     }
   }
 
+  inputChange(event) {
+    this.setState({
+      textQuery: event.target.value
+    });
+  }
 
   //for testing only: handle user text input
   textQuery() {
-    let query = document.getElementById('query').value;
-    console.log(query);
-    console.log(this.state.location)
+    let query = this.state.textQuery;
     $.ajax({
       url: '/voice',
       method: 'POST',
@@ -147,7 +151,8 @@ class App extends React.Component {
           </form>
         </div>
         <div className="ui center aligned segment" style={textStyle}>
-          <p id="query"></p>
+          <input type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+          <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
         </div>
         <canvas className="visualizer" style={visualizerStyle}></canvas>
       </div>

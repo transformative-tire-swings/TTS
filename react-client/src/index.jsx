@@ -15,7 +15,7 @@ class App extends React.Component {
       response: {type: "text", api: "default", text: "This is your moment. Ask a question.", data: Object},
       location: {},
       micOn: false,
-      textQuery: ''
+      textQuery: 'directions'
     };
 
     const clientID = client_env.client_env.houndify_clientID;
@@ -35,6 +35,16 @@ class App extends React.Component {
           lon: data.coords.longitude
         }
       })
+      
+      // REMOVE WHEN READY!
+        // runs text query when component added to page!
+        // makes testing easy!
+      var test = _ => {
+        this.textQuery();
+      }
+
+      test();
+      // REMOVE WHEN READY
     })
   }
 

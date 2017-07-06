@@ -4,7 +4,7 @@ const Cleverbot = ({response}) => {
   const divStyle = {width: '400px'};
   return (
 
-    <h2>{response.text}</h2>
+    <p>{response.text}</p>
   );
 };
 

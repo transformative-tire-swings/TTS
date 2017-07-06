@@ -137,7 +137,7 @@ class App extends React.Component {
       color: '#fff'
     };
     const textStyle = {
-      marginTop: '220px', 
+      marginTop: '30px', 
       fontSize: '20px', 
       borderStyle: 'none', 
       boxShadow: 'none', 

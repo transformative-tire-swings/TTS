@@ -28,6 +28,7 @@ const weather = {
     .then((data) => {
 
       let weatherObj = JSON.parse(data);
+      console.log(weatherObj);
 
       let response = fredTools.constructWeathertext(originalStr, weatherObj);
 

@@ -22,7 +22,6 @@ const restaurant = {
 
     return request(options)
     .then((yelpData) => {
-      console.log('Yelp DATAAA', yelpData.businesses[0]);
 
       let restaurantData = yelpData.businesses[0];
       let restaurantDetails = {

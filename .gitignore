@@ -38,3 +38,6 @@ bower_components/
 
 # Don't commit package.lock.json
 package-lock.json
+
+# Ignore client_env.js
+react-client/src/client_env.js

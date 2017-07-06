@@ -26,12 +26,10 @@ const ResponseCard = ({response}) => {
 
   const divStyle = {width: '400px', marginTop: '100px'};
   const textStyle = {
-    marginTop: '20px', 
-    // textAlign: 'center',
+    marginTop: '30px', 
     marginBottom: '200px', 
     height: '300px', 
     fontSize: '43px', 
-    // font: 'cursive',
     width: '100%',
     color: 'white',
     borderStyle: 'none', 

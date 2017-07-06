@@ -137,12 +137,12 @@ class App extends React.Component {
       color: '#fff'
     };
     const textStyle = {
-      marginTop: '10px', 
+      marginTop: '220px', 
       fontSize: '20px', 
       borderStyle: 'none', 
       boxShadow: 'none', 
       wordWrap: 'normal', 
-      wordBreak: 'break-all', 
+      wordBreak: 'normal', 
       whiteSpace: 'normal'
       //dont add opacity 
     };
@@ -175,11 +175,11 @@ class App extends React.Component {
       <div className="container" style={bkg}>
 
         <div className='ui centered grid'>
-          <div class="eight wide column">
+          
             <div className='ui header'>
               <ResponseCard response={this.state.response} />
             </div>
-          </div>
+
         </div>
 
         <div className="ui centered grid">
@@ -192,12 +192,12 @@ class App extends React.Component {
           </form>
         </div>
 
-        <canvas className="visualizer" style={visualizerStyle}></canvas>
 
         <div className="ui center aligned segment" style={textStyle}>
           <input type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
           <button className="ui secondary basic button" onClick={this.textQuery.bind(this)}>Submit Text Query</button>
         </div>
+        <canvas className="visualizer" style={visualizerStyle}></canvas>
 
       </div>
     );

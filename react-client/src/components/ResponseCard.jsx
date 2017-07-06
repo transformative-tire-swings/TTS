@@ -25,14 +25,23 @@ const ResponseCard = ({response}) => {
   }
 
   const divStyle = {width: '400px', marginTop: '100px'};
-  const textStyle ={marginTop: '20px', marginBottom: '200px', height: '300px', fontSize: '30px', borderStyle: 'none', boxShadow:'none', wordWrap: 'normal', wordBreak: 'break-all', whiteSpace: 'normal' };
+  const textStyle = {
+    marginTop: '20px', 
+    marginBottom: '200px', 
+    height: '300px', 
+    fontSize: '30px', 
+    borderStyle: 'none', 
+    boxShadow: 'none', 
+    wordWrap: 'normal', 
+    wordBreak: 'break-all', 
+    whiteSpace: 'normal' };
 
-  return(
-    <div className="ui center aligned segment" style={textStyle}>
+  return (
+    <div className="response" style={textStyle}>
       <ElementName response={response} />
     </div>
   );
-}
+};
 
 export default ResponseCard;
 

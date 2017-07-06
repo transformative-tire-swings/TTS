@@ -132,12 +132,42 @@ class App extends React.Component {
 
 
   render () {
-    const border = {border: 0, outline: 'none'};
-    const textStyle ={ marginTop: '10px', fontSize: '20px', borderStyle: 'none', boxShadow:'none', wordWrap: 'normal', wordBreak: 'break-all', whiteSpace: 'normal' };
-    const visualizerStyle = {width: '100%'};
+    const border = {border: 0, 
+      outline: 'none', 
+      color: '#fff'
+    };
+    const textStyle = {
+      marginTop: '10px', 
+      fontSize: '20px', 
+      borderStyle: 'none', 
+      boxShadow: 'none', 
+      wordWrap: 'normal', 
+      wordBreak: 'break-all', 
+      whiteSpace: 'normal'
+      //dont add opacity 
+    };
+    const visualizerStyle = {
+      width: '100%',
+      // dont add opacity: '0'
+    };
+
+    const bkg = {
+      backgroundImage: 'url(.././libs/mtns.jpg)', 
+      // backgroundRepeat: 'no-repeat', 
+      // backgroundPosition: 'center', 
+      height: '100%', 
+      // width: '100%',
+      // margin: '0px',
+      // position: 'relative', 
+      opacity: '0.90', 
+      // padding: '0px',
+      backgroundSize: 'cover',
+      overflowY: 'hidden'
+    }; 
+
 
     return (
-      <div className="wrapper">
+      <div className="wrapper" style={bkg}>
         <div className="ui centered grid">
           <ResponseCard response={this.state.response} />
         </div>
@@ -152,11 +182,11 @@ class App extends React.Component {
         </div>
         <div className="ui center aligned segment" style={textStyle}>
           <input type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
-          <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
+          <button className="ui secondary basic button" onClick={this.textQuery.bind(this)}>Submit Text Query</button>
         </div>
         <canvas className="visualizer" style={visualizerStyle}></canvas>
       </div>
-    )
+    );
   }
 }
 

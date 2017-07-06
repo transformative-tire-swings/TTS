@@ -16,8 +16,12 @@ class App extends React.Component {
       response: {type: 'text', api: 'default', text: 'If you can dream it, we can do it', data: Object},
       location: {},
       micOn: false,
+<<<<<<< 07477bd8c02e66f0d49efcdd63544187df18c866
       textQuery: '',
       showComponent: false
+=======
+      textQuery: 'directions'
+>>>>>>> (feat) Present current location to googleMaps apiHandler.
     };
 
     const clientID = client_env.client_env.houndify_clientID;
@@ -183,19 +187,13 @@ class App extends React.Component {
         <p id="query" style={{color: 'white'}}></p>
 
 
-<<<<<<< d9a4e2730f7583d8c805d46fb2d7405a0828b407
         <div className="ui center aligned grid">
           <div className="column six wide">
             <div className='ui icon input' >
-              <input type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+              <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
               <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
             </div>
           </div>
-=======
-        <div className="ui center aligned segment" style={textStyle}>
-          <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
-          <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
->>>>>>> (feat/test) Get google maps rendering with hardcoded data upon 'directions' keyword use
         </div>
 
         <canvas className="visualizer"></canvas>

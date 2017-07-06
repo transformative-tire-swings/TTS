@@ -9,6 +9,7 @@ logs
 
 # Env
 *.env
+react-client/src/client_env.js
 
 # Runtime data
 pids

@@ -22,6 +22,7 @@ const restaurant = {
 
     return request(options)
     .then((yelpData) => {
+      console.log('Yelp DATAAA', yelpData.businesses[0]);
 
       let restaurantData = yelpData.businesses[0];
       let restaurantDetails = {
@@ -29,16 +30,17 @@ const restaurant = {
         image: restaurantData.image_url,
         numReviews: restaurantData.review_count,
         rating: restaurantData.rating,
-        website: restaurantData.url.split('?')[0]
+        website: restaurantData.url.split('?')[0],
+        price: restaurantData.price,
+        address: restaurantData.location.display_address.join('\n'),
+        phone: restaurantData.display_phone
       }
       
 
-      let response = fredTools.constructFoodText(originalStr, restaurantData);
       
       let apiResponse = {
         type: 'widget',
         api: 'yelp',
-        text: response,
         data: restaurantDetails
       };
       return apiResponse;

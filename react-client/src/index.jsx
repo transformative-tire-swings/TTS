@@ -16,12 +16,9 @@ class App extends React.Component {
       response: {type: 'text', api: 'default', text: 'If you can dream it, we can do it', data: Object},
       location: {},
       micOn: false,
-<<<<<<< 07477bd8c02e66f0d49efcdd63544187df18c866
       textQuery: '',
       showComponent: false
-=======
-      textQuery: 'directions'
->>>>>>> (feat) Present current location to googleMaps apiHandler.
+
     };
 
     const clientID = client_env.client_env.houndify_clientID;

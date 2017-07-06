@@ -37,7 +37,9 @@ const restaurant = {
       }
       
 
-      
+      // let response = fredTools.constructFoodText(originalStr, restaurantData);
+      let response = `Directions to: ${destination}`;
+
       let apiResponse = {
         type: 'widget',
         api: 'yelp',

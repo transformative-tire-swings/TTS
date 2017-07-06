@@ -15,7 +15,8 @@ class App extends React.Component {
       response: {type: "text", api: "default", text: "This is your moment. Ask a question.", data: Object},
       location: {},
       micOn: false,
-      textQuery: 'directions'
+      textQuery: ''
+      // textQuery: 'directions 500 Paris street'
     };
 
     const clientID = client_env.client_env.houndify_clientID;

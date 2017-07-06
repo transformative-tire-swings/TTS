@@ -45,12 +45,12 @@ const Words = {
     let description = weatherObj.weather[0].description.split(' ');
 
 
-    let skyLogic = clouds > 30 ? `It looks pretty cloudy outside. Clouds at ${clouds}% in ${place}.` : `It looks like the sky is all clear. Clouds at ${clouds}% in ${place}`;
+    let skyLogic = clouds > 30 ? `It looks pretty cloudy outside. Clouds at ${clouds}% in ${place}.` : `It looks like the sky is mostly clear! Cloud coverage in ${place} is ${clouds}%`;
 
-    let rainLogic = _.contains(description, 'rain') || _.contains(description, 'thunderstorm') ?  `Looks like it's raining in ${place}.` : `No rain in ${place} today.`;
+    let rainLogic = _.contains(description, 'rain') || _.contains(description, 'thunderstorm') ?  `Looks like it's raining in ${place}.` : `There is no rain in ${place} today.`;
 
 
-    let windLogic = wind > 5 ? `It's windy outside. Don't get blown away. Wind speed at ${wind} in ${place}` : `Don't worry about the wind today. Wind speed at ${wind} in ${place}`;
+    let windLogic = wind > 5 ? `It's windy outside. Don't get blown away. The wind speed is ${wind} in ${place}` : `It is not windy today. The wind speed is ${wind} in ${place}`;
 
     let weatherLogic = {
       'sunny': skyLogic,

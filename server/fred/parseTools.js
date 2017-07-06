@@ -99,9 +99,10 @@ const Tools = {
 
     let weatherLogic = model.words.getWeatherString(weatherObject);
 
-    // let words = Object.keys(weatherLogic);
+    let defaultResponse = weatherObject.weather[0].description.split(' ').reduce((acc, val) => (acc + val[0].toUpperCase() + val.slice(1) + ' '), '') + 'in ' + weatherObject.name;
 
-    let weatherText = Tools.findMatch(originalString, weatherLogic) || `Here's the weather in ${weatherObject.name}.`;
+    // let words = Object.keys(weatherLogic);
+    let weatherText = Tools.findMatch(originalString, weatherLogic) || defaultResponse;
 
     return weatherText;
 

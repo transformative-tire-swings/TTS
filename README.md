@@ -39,7 +39,6 @@ From within the root directory:
 ```sh
 npm install -g bower
 npm install
-bower install
 ```
 ### Front End
 

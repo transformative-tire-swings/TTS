@@ -25,14 +25,26 @@ const ResponseCard = ({response}) => {
   }
 
   const divStyle = {width: '400px', marginTop: '100px'};
-  const textStyle ={marginTop: '20px', marginBottom: '200px', height: '300px', fontSize: '30px', borderStyle: 'none', boxShadow:'none', wordWrap: 'normal', wordBreak: 'break-all', whiteSpace: 'normal' };
+  const textStyle = {
+    marginTop: '30px', 
+    marginBottom: '65px', //bring up or down textbox
+    height: '300px', 
+    fontSize: '43px', 
+    width: '100%',
+    color: 'white',
+    borderStyle: 'none', 
+    boxShadow: 'none', 
+    wordWrap: 'normal', 
+    wordBreak: 'normal', 
+    whiteSpace: 'normal' 
+  };
 
-  return(
-    <div className="ui center aligned segment" style={textStyle}>
+  return (
+    <div style={textStyle}>
       <ElementName response={response} />
     </div>
   );
-}
+};
 
 export default ResponseCard;
 

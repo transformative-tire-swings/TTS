@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      response: {type: "text", api: "default", text: "This is your moment. Ask a question.", data: Object},
+      response: {type: "text", api: "default", text: "If you can dream it, we can do it", data: Object},
       location: {},
       micOn: false,
       textQuery: ''
@@ -132,31 +132,75 @@ class App extends React.Component {
 
 
   render () {
-    const border = {border: 0, outline: 'none'};
-    const textStyle ={ marginTop: '10px', fontSize: '20px', borderStyle: 'none', boxShadow:'none', wordWrap: 'normal', wordBreak: 'break-all', whiteSpace: 'normal' };
-    const visualizerStyle = {width: '100%'};
+    const border = {border: 0, 
+      outline: 'none', 
+      color: '#fff'
+    };
+    const textStyle = {
+      marginTop: '30px', 
+      fontSize: '20px', 
+      borderStyle: 'none', 
+      boxShadow: 'none', 
+      wordWrap: 'normal', 
+      wordBreak: 'normal', 
+      whiteSpace: 'normal'
+      //dont add opacity 
+    };
+    const visualizerStyle = {
+      width: '100%',
+      color: '#fff', //doesnt change anything
+      // padding: '10px',
+      marginBottom: '10px',
+      position: 'center'
+
+      // dont add opacity: '0'
+    };
+
+    const bkg = {
+      backgroundImage: 'url(.././libs/mtns.jpg)', 
+      // backgroundRepeat: 'no-repeat', 
+      // backgroundPosition: 'center', 
+      height: '100%', 
+      // width: '100%',
+      // margin: '0px',
+      // position: 'relative', 
+      opacity: '0.90', 
+      // padding: '0px',
+      backgroundSize: 'cover',
+      overflowY: 'hidden'
+    }; 
+
 
     return (
-      <div className="wrapper">
-        <div className="ui centered grid">
-          <ResponseCard response={this.state.response} />
+      <div className="container" style={bkg}>
+
+        <div className='ui centered grid'>
+          
+            <div className='ui header'>
+              <ResponseCard response={this.state.response} />
+            </div>
+
         </div>
+
         <div className="ui centered grid">
           <form id="form" className="ui form" action="javascript:void(0);">
-            <div className="ui action big labeled fluid input field">
+            <div className="ui action big labeled fluid input field" style={{marginBottom: '100px'}}>
               <div className="ui icon basic label button" onClick= {this.startStopVoiceSearch.bind(this)} style={border}>
                 <i id="voiceIcon" className="unmute huge icon"></i>
               </div>
             </div>
           </form>
         </div>
+
+
         <div className="ui center aligned segment" style={textStyle}>
           <input type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
-          <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
+          <button className="ui secondary basic button" onClick={this.textQuery.bind(this)}>Submit Text Query</button>
         </div>
         <canvas className="visualizer" style={visualizerStyle}></canvas>
+
       </div>
-    )
+    );
   }
 }
 

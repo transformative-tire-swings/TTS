@@ -1,7 +1,6 @@
 const nlp = require('compromise');
 const model = require('../../database-postgres/models');
 
-
 const Tools = {
 
   //find the api name

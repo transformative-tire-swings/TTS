@@ -16,6 +16,7 @@ class App extends React.Component {
       location: {},
       micOn: false,
       textQuery: ''
+      // textQuery: 'directions 500 Paris street'
     };
 
     const clientID = client_env.client_env.houndify_clientID;
@@ -35,6 +36,16 @@ class App extends React.Component {
           lon: data.coords.longitude
         }
       })
+      
+      // REMOVE WHEN READY!
+        // runs text query when component added to page!
+        // makes testing easy!
+      // var test = _ => {
+      //   this.textQuery();
+      // }
+
+      // test();
+      // REMOVE WHEN READY
     })
   }
 
@@ -151,7 +162,8 @@ class App extends React.Component {
           </form>
         </div>
         <div className="ui center aligned segment" style={textStyle}>
-          <input type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+          <p id="query">WHOO, heres some text!</p>
+          <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
           <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
         </div>
         <canvas className="visualizer" style={visualizerStyle}></canvas>

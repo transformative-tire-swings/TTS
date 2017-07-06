@@ -5,10 +5,11 @@ import Weather from './Weather.jsx';
 import Yelp from './Yelp.jsx';
 import EasterEgg from './EasterEgg.jsx';
 import Loading from './Loading.jsx';
+import GoogleMaps from './GoogleMaps.jsx';
 
 const ResponseCard = ({response}) => {
   let ElementName;
-  console.log('response from responseCard: ',response);
+  console.log('response from responseCard: ', response);
   //default state: before making any request
   if(response.api === "default") {
     ElementName = DefaultContent;
@@ -22,7 +23,11 @@ const ResponseCard = ({response}) => {
     ElementName = EasterEgg;
   } else if (response.api === "loading") {
     ElementName = Loading;
+  } else if (response.api === "googlemap") {
+    ElementName = GoogleMaps;
   }
+
+  console.log('RESPONSE FROM SERVER:', response.data, 'type:', typeof response.data);
 
   const divStyle = {width: '400px', marginTop: '100px'};
   const textStyle ={marginTop: '20px', marginBottom: '200px', height: '300px', fontSize: '30px', borderStyle: 'none', boxShadow:'none', wordWrap: 'normal', wordBreak: 'break-all', whiteSpace: 'normal' };

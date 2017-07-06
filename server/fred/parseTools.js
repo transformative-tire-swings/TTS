@@ -95,13 +95,13 @@ const Tools = {
     return nlpStr.match('#Food').out('text') || null;
   },
 
-  constructWeathertext: (str, obj) => {
+  constructWeathertext: (originalString, weatherObject) => {
 
-    let weatherLogic = model.words.getWeatherString(obj)
+    let weatherLogic = model.words.getWeatherString(weatherObject);
 
     // let words = Object.keys(weatherLogic);
 
-    let weatherText = Tools.findMatch(str, weatherLogic) || `Here's the weather in ${obj.name}.`;
+    let weatherText = Tools.findMatch(originalString, weatherLogic) || `Here's the weather in ${weatherObject.name}.`;
 
     return weatherText;
 

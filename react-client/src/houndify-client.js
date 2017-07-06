@@ -72,6 +72,7 @@ module.exports.houndifyClient = (location, handleServerResponse, setMicState, se
     //See https://houndify.com/reference/HoundPartialTranscript
     onTranscriptionUpdate: function(trObj) {
       var transcriptElt = document.getElementById("query");
+      console.log(trObj.PartialTranscript);
       transcriptElt.value = trObj.PartialTranscript;
       document.getElementById("query").innerHTML = trObj.PartialTranscript;
     },

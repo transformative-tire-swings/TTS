@@ -40,11 +40,11 @@ class App extends React.Component {
       // REMOVE WHEN READY!
         // runs text query when component added to page!
         // makes testing easy!
-      var test = _ => {
-        this.textQuery();
-      }
+      // var test = _ => {
+      //   this.textQuery();
+      // }
 
-      test();
+      // test();
       // REMOVE WHEN READY
     })
   }
@@ -162,6 +162,7 @@ class App extends React.Component {
           </form>
         </div>
         <div className="ui center aligned segment" style={textStyle}>
+          <p id="query">WHOO, heres some text!</p>
           <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
           <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
         </div>

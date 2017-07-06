@@ -105,18 +105,8 @@ const Tools = {
     return weatherText;
 
   },
-<<<<<<< 9d92ec4b2623e7ade3d0b05d926d68d7a8ba7a0c
   constructFoodText: (originalString, restaurantData) => {
     return 'I recommend ' + restaurantData.name;
-=======
-
-  constructFoodText: (str, obj) => {
-    return `I recommend this place.`
-  },
-
-  constructDirectionText: (str, obj) => {
-    return `Lets go to this place!`;
->>>>>>> (feat/test) Get google maps rendering with hardcoded data upon 'directions' keyword use
   }
 
 };

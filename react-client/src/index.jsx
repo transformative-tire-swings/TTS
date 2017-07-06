@@ -151,7 +151,7 @@ class App extends React.Component {
           </form>
         </div>
         <div className="ui center aligned segment" style={textStyle}>
-          <input type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+          <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
           <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
         </div>
         <canvas className="visualizer" style={visualizerStyle}></canvas>

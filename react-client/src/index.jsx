@@ -183,6 +183,7 @@ class App extends React.Component {
         <p id="query" style={{color: 'white'}}></p>
 
 
+<<<<<<< d9a4e2730f7583d8c805d46fb2d7405a0828b407
         <div className="ui center aligned grid">
           <div className="column six wide">
             <div className='ui icon input' >
@@ -190,6 +191,11 @@ class App extends React.Component {
               <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
             </div>
           </div>
+=======
+        <div className="ui center aligned segment" style={textStyle}>
+          <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+          <button onClick={this.textQuery.bind(this)}>Submit Text Query</button>
+>>>>>>> (feat/test) Get google maps rendering with hardcoded data upon 'directions' keyword use
         </div>
 
         <canvas className="visualizer"></canvas>

@@ -27,17 +27,22 @@ const ResponseCard = ({response}) => {
   const divStyle = {width: '400px', marginTop: '100px'};
   const textStyle = {
     marginTop: '20px', 
+    // textAlign: 'center',
     marginBottom: '200px', 
     height: '300px', 
-    fontSize: '30px', 
+    fontSize: '43px', 
+    // font: 'cursive',
+    width: '100%',
+    color: 'white',
     borderStyle: 'none', 
     boxShadow: 'none', 
     wordWrap: 'normal', 
-    wordBreak: 'break-all', 
-    whiteSpace: 'normal' };
+    wordBreak: 'normal', 
+    whiteSpace: 'normal' 
+  };
 
   return (
-    <div className="response" style={textStyle}>
+    <div style={textStyle}>
       <ElementName response={response} />
     </div>
   );

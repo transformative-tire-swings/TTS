@@ -66,7 +66,7 @@
 
           analyser.getFloatFrequencyData(dataArray);
 
-          canvasCtx.fillStyle = 'rgb(255, 255, 255)';
+          canvasCtx.fillStyle = 'rgb(0, 0, 0)';
           canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
           let barWidth = (WIDTH / bufferLength) * 1;
@@ -77,8 +77,8 @@
             for (let i = 0; i < bufferLength; i++) {
               barHeight = (dataArray[i] + 140)*1;
 
-              canvasCtx.fillStyle = 'rgb(' /*+ Math.floor(barHeight)*/ + '0,0,0)';
-              canvasCtx.fillRect(x,HEIGHT-barHeight*2,barWidth,barHeight*2);
+              canvasCtx.fillStyle = 'white'; //'rgb(' /*+ Math.floor(barHeight)*/ + '0,0,0)';
+              canvasCtx.fillRect(x, HEIGHT - barHeight * 2, barWidth, barHeight * 2);
 
               x += barWidth + 1;
 

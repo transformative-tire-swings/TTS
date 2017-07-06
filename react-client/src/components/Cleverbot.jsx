@@ -3,7 +3,9 @@ import React from 'react';
 const Cleverbot = ({response}) => {
   const divStyle = {width: '400px'};
   return (
-    <p>{response.text}</p>
+    <div className='response'>
+      <p>{response.text}</p>
+    </div>
   );
 };
 

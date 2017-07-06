@@ -106,8 +106,8 @@ const Tools = {
     return weatherText;
 
   },
-  constructFoodText: (str, obj) => {
-    return `I recommend this place.`
+  constructFoodText: (originalString, restaurantData) => {
+    return 'I recommend ' + restaurantData.name;
   }
 
 };

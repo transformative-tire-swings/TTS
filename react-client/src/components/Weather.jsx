@@ -19,13 +19,15 @@ const Weather = ({response}) => {
         <p style={{marginBottom: '50px'}}>{response.text}</p>
       </div>
 
-      <div className="ui segments">
-        <div className="ui segment small image">
-            <img src={"http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"} height="100" width="100"/>
+      <div className="ui centered item">
+        <div className="ui small circular image">
+            <img src={"http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"} height="150" width="150"/>
         </div>
-        <div className="ui segment">{response.data.weather[0].description.split(' ').reduce((acc, val) => (acc + val[0].toUpperCase() + val.slice(1) + ' '), '')}</div>
-        <div className="ui segment">{Math.round(9/5 * (response.data.main.temp - 273) + 32)} &#8457;</div>
-        <div className="ui segment">Wind: {response.data.wind.speed} mph</div>
+        <div className="ui content">
+        <div className="ui description" style={contentStyle}>{response.data.weather[0].description.split(' ').reduce((acc, val) => (acc + val[0].toUpperCase() + val.slice(1) + ' '), '')}</div>
+        <div className="ui description" style={contentStyle}>{Math.round(9/5 * (response.data.main.temp - 273) + 32)} &#8457;</div>
+        <div className="ui description" style={contentStyle}>Wind: {response.data.wind.speed} mph</div>
+        </div>
       </div>
     </div>
   );

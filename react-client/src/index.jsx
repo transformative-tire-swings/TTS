@@ -133,7 +133,7 @@ class App extends React.Component {
 
   render () {
     const border = {
-      border: 'none', 
+      border: 0, 
       outlineStyle: 'none'
       // color: '#fff'
     };
@@ -150,23 +150,14 @@ class App extends React.Component {
     const visualizerStyle = {
       width: '100%',
       color: '#fff', //doesnt change anything
-      // padding: '10px',
       marginBottom: '10px',
       position: 'center'
-
-      // dont add opacity: '0'
     };
 
     const bkg = {
       backgroundImage: 'url(.././libs/mtns.jpg)', 
-      // backgroundRepeat: 'no-repeat', 
-      // backgroundPosition: 'center', 
       height: '100%', 
-      // width: '100%',
-      // margin: '0px',
-      // position: 'relative', 
       opacity: '0.90', 
-      // padding: '0px',
       backgroundSize: 'cover',
       overflowY: 'hidden'
     }; 
@@ -175,13 +166,11 @@ class App extends React.Component {
     return (
       <div className="container" style={bkg}>
       
-
-
         <ResponseCard response={this.state.response} />
 
         <div className="ui centered grid">
           <form id="form" className="ui form" action="javascript:void(0);">
-            <div className="ui big labeled input" style={{marginBottom: '150px'}}>
+            <div className="ui big labeled input" style={{marginBottom: '30px'}}>
               <div className="ui icon basic label button" onClick= {this.startStopVoiceSearch.bind(this)} style={border}>
                 <i id="voiceIcon" className="inverted unmute huge icon"></i>
               </div>

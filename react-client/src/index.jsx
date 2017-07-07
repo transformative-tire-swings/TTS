@@ -6,13 +6,14 @@ import client_env from './client_env.js';
 import houndifyclient from './houndify-client.js';
 import frequencyBars from './frequency-bars.js';
 import ResponseCard from './components/ResponseCard.jsx';
+import IntroModal from './components/IntroModal.jsx';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      response: {type: "text", api: "default", text: "If you can dream it, we can do it", data: Object},
+      response: {type: 'text', api: 'default', text: 'If you can dream it, we can do it', data: Object},
       location: {},
       micOn: false,
       textQuery: ''
@@ -22,20 +23,20 @@ class App extends React.Component {
 
     this.requestInfo = {
       ClientID: clientID,
-      UserID: "test_user"
+      UserID: 'test_user'
     };
   }
 
   componentDidMount() {
     Utils.location().
-    then((data) => {
-      this.setState({
-        location: {
-          lat: data.coords.latitude,
-          lon: data.coords.longitude
-        }
-      })
-    })
+      then((data) => {
+        this.setState({
+          location: {
+            lat: data.coords.latitude,
+            lon: data.coords.longitude
+          }
+        });
+      });
   }
 
   // trigger response state to change when getting back reply from Fred
@@ -46,8 +47,8 @@ class App extends React.Component {
       console.log('handleServerResponse: ', response);
       this.setState({
         response: response
-      })
-      console.log("after changing state: ", this.state.response);
+      });
+      console.log('after changing state: ', this.state.response);
       this.responseTextToSpeech(response.text);
     }
   }
@@ -70,7 +71,7 @@ class App extends React.Component {
 
   setLoadingState() {
     this.setState({
-      response: {type: "text", api: "loading", text: "Hang on a moment...", data: Object},
+      response: {type: 'text', api: 'loading', text: 'Hang on a moment...', data: Object},
     });
   }
 
@@ -94,7 +95,7 @@ class App extends React.Component {
       //display frequency bars
       ///audio frequency stop
       //starts streaming of voice search requests to Houndify backend
-      document.getElementById("voiceIcon").className = "ui text loader"; //"loading circle notched icon big";
+      document.getElementById('voiceIcon').className = 'ui text loader'; //"loading circle notched icon big";
       // document.getElementById("textSearchButton").disabled = true;
       // document.getElementById("query").readOnly = true;
     }
@@ -133,19 +134,19 @@ class App extends React.Component {
 
   render () {
     const border = {
-      border: 0, 
+      border: 0,
       outlineStyle: 'none'
       // color: '#fff'
     };
     const textStyle = {
-      marginTop: '30px', 
-      fontSize: '20px', 
-      borderStyle: 'none', 
-      boxShadow: 'none', 
-      wordWrap: 'normal', 
-      wordBreak: 'normal', 
+      marginTop: '30px',
+      fontSize: '20px',
+      borderStyle: 'none',
+      boxShadow: 'none',
+      wordWrap: 'normal',
+      wordBreak: 'normal',
       whiteSpace: 'normal'
-      //dont add opacity 
+      //dont add opacity
     };
     const visualizerStyle = {
       width: '100%',
@@ -155,25 +156,23 @@ class App extends React.Component {
     };
 
     const bkg = {
-      backgroundImage: 'url(.././libs/mtns.jpg)', 
-      height: '100%', 
-      opacity: '0.90', 
+      backgroundImage: 'url(.././libs/mtns.jpg)',
+      height: '100%',
+      opacity: '0.90',
       backgroundSize: 'cover',
       overflowY: 'hidden'
-    }; 
+    };
 
 
     return (
       <div className="container" style={bkg}>
-
+        <IntroModal />
         <ResponseCard response={this.state.response} />
 
         <div className="ui centered grid">
           <form id="form" className="ui form" action="javascript:void(0);">
             <div className="ui big labeled input" style={{marginBottom: '30px'}}>
-              <div className="ui icon basic label button" onClick= {this.startStopVoiceSearch.bind(this)} style={border}>
-                <i id="voiceIcon" className="inverted unmute huge icon"></i>
-              </div>
+              <i id="voiceIcon" className="inverted unmute huge icon" onClick= {this.startStopVoiceSearch.bind(this)}></i>
             </div>
           </form>
         </div>
@@ -190,12 +189,10 @@ class App extends React.Component {
 
         <canvas className="visualizer" style={visualizerStyle}></canvas>
 
-        
+
       </div>
     );
   }
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
-
-

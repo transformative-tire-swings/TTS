@@ -1,13 +1,24 @@
 import React from 'react';
 
 const Weather = ({response}) => {
-  const fahrenheitStyle = {fontSize: '40px'};
-  const spanStyle = {width: '100px', marginRight:'20px', fontSize: '20px'};
+  const contentStyle = {
+      marginBottom: '20px',
+      fontSize: '20px', 
+      borderStyle: 'none', 
+      boxShadow: 'none', 
+      wordWrap: 'normal', 
+      wordBreak: 'normal', 
+      whiteSpace: 'normal',
+      color: 'white',
+      fontWeight: 'normal',
+      textIndent: '10px'
+  };
   return (
     <div>
-      <div className="ui segment">
-        <h2>{response.text}</h2>
+      <div className="ui centered grid" style={{color: 'white'}}>
+        <p style={{marginBottom: '50px'}}>{response.text}</p>
       </div>
+
       <div className="ui segments">
         <div className="ui segment small image">
             <img src={"http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"} height="100" width="100"/>

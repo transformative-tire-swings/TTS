@@ -7,6 +7,8 @@ import houndifyclient from './houndify-client.js';
 import frequencyBars from './frequency-bars.js';
 import ResponseCard from './components/ResponseCard.jsx';
 import IntroModal from './components/IntroModal.jsx';
+import classNames from 'classnames';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 class App extends React.Component {
 
@@ -141,6 +143,14 @@ class App extends React.Component {
 
 
   render () {
+    var classes = classNames( this.props.className, {
+        'grid': true,
+        'ui': true, 
+        'center': true,
+        'aligned': true,
+        'mExample': true
+    } );
+
     const border = {
       border: 0,
       outlineStyle: 'none'
@@ -153,9 +163,7 @@ class App extends React.Component {
       boxShadow: 'none',
       wordWrap: 'normal',
       wordBreak: 'normal',
-      whiteSpace: 'normal',
-      background: 'rgba(0, 0, 0, 0.2)'
-      //dont add opacity
+      whiteSpace: 'normal'
     };
     const visualizerStyle = {
       width: '100%',
@@ -200,8 +208,13 @@ class App extends React.Component {
             </div>
           </div>
         </div>
+        {/*<CSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>*/}
+        {/*</CSSTransitionGroup>*/}
         
-          <canvas className="wrapper visualizer" style={visualizerStyle}></canvas>
+        <canvas className="wrapper visualizer" style={visualizerStyle}></canvas>
       
       </div>
     );

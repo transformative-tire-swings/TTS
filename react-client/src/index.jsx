@@ -153,13 +153,6 @@ class App extends React.Component {
       wordWrap: 'normal',
       wordBreak: 'normal',
       whiteSpace: 'normal'
-      //dont add opacity
-    };
-    const visualizerStyle = {
-      width: '100%',
-      color: '#fff', //doesnt change anything
-      marginBottom: '10px',
-      position: 'center'
     };
 
     const bkg = {
@@ -198,7 +191,7 @@ class App extends React.Component {
           </div>
         </div>
 
-        <canvas className="visualizer" style={visualizerStyle}></canvas>
+        <canvas className="visualizer"></canvas>
 
 
       </div>

@@ -17,7 +17,7 @@ const Yelp = ({response}) => {
   	<div>
 
       <div className="ui centered grid" style={{color: 'white'}}>
-        <p style={{marginBottom: '50px'}}>I recommend {response.data.name}</p>
+        <p style={{marginBottom: '50px'}}>{response.text}</p>
       </div>
 
       <div className="ui centered item">

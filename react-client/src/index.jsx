@@ -153,7 +153,15 @@ class App extends React.Component {
       boxShadow: 'none',
       wordWrap: 'normal',
       wordBreak: 'normal',
-      whiteSpace: 'normal'
+      whiteSpace: 'normal',
+      background: 'rgba(0, 0, 0, 0.2)'
+      //dont add opacity
+    };
+    const visualizerStyle = {
+      width: '100%',
+      color: '#fff', //doesnt change anything
+      marginBottom: '10px',
+      position: 'center'
     };
 
     const bkg = {

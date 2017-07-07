@@ -41,3 +41,12 @@
 .ui header {
   margin-top: 20px;
 }
+
+.slide {
+  transition: left 2s;
+  background: rgba(0, 0, 0.2);
+}
+
+.slide:hover {
+  left: -100%;
+}

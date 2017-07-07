@@ -16,7 +16,8 @@ class App extends React.Component {
       response: {type: 'text', api: 'default', text: 'If you can dream it, we can do it', data: Object},
       location: {},
       micOn: false,
-      textQuery: ''
+      textQuery: '',
+      showComponent: false
     };
 
     const clientID = client_env.client_env.houndify_clientID;
@@ -61,6 +62,12 @@ class App extends React.Component {
     msg.rate = 12 / 10;
     msg.pitch = 0;
     speechSynthesis.speak(msg);
+  }
+
+  onQuestionClick() {
+    this.setState({
+      showComponent: !this.state.showComponent,
+    });
   }
 
   setMicState() {
@@ -166,6 +173,10 @@ class App extends React.Component {
 
     return (
       <div className="container" style={bkg}>
+        <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
+        {this.state.showComponent ?
+          <IntroModal /> : null
+        }
         <IntroModal />
         <ResponseCard response={this.state.response} />
 

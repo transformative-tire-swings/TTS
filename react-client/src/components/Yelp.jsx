@@ -9,21 +9,19 @@ const Yelp = ({response}) => {
         <p style={{marginBottom: '50px'}}>I recommend {response.data.name}</p>
       </div>
 
-      <div className="ui raised segments">
-        <div className="ui horizontal segments">
-          <div className="ui segment small image">
-            <img src={response.data.image} height="350" width="350"/>
+      <div className="ui centered item">
+          <div className="ui medium image">
+            <img src={response.data.image}/>
           </div>
-          <div className="ui segments">
-            <div className="ui black inverted segment"><p>Rating: {response.data.rating}</p></div>
-            <div className="ui black inverted segment"><p>Price: {response.data.price}</p></div>
-            <div className="ui black inverted segment"><p>Address: {response.data.address}</p></div>
-            <div className="ui black inverted segment"><p>Phone Number: {response.data.phone}</p></div>
-            <div className="ui black inverted segment">
-              <a href={response.data.website}>More Information about {response.data.name}</a>
-            </div>
+          <div className="middle aligned content">
+            <p>Rating: {response.data.rating}</p>
+            <p>Price: {response.data.price}</p>
+            <p>Address: {response.data.address}</p>
+            <p>Phone Number: {response.data.phone}</p>
+            
+            <a href={response.data.website}>More Information about {response.data.name}</a>
+
           </div>
-        </div>
       </div>
     </div>
   );

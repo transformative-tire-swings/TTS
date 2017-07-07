@@ -35,11 +35,12 @@ const restaurant = {
         phone: restaurantData.display_phone
       }
       
-
+      let response = fredTools.constructFoodText(originalStr, restaurantData);
       
       let apiResponse = {
         type: 'widget',
         api: 'yelp',
+        text: response,
         data: restaurantDetails
       };
       return apiResponse;

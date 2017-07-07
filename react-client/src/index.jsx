@@ -165,7 +165,7 @@ class App extends React.Component {
 
     return (
       <div className="container" style={bkg}>
-      
+
         <ResponseCard response={this.state.response} />
 
         <div className="ui centered grid">

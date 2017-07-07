@@ -46,7 +46,7 @@ const ResponseCard = ({response}) => {
 
   return (
     <div className='ui centered grid'>
-      <div className='ui header'>
+      <div className={`ui header ${response.api === 'googlemap' ? 'fullWidthTransition' : '' }`}>
         <div style={textStyle}>
           <ElementName response={response} />
         </div>

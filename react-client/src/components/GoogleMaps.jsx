@@ -9,8 +9,8 @@ const GoogleMaps = ({response}) =>  {
   
   return (
     <div>
-      <iframe width="450"
-        height="250"
+      <iframe width="100%"
+        height="500"
         frameBorder="0"
         src={src}
         allowFullScreen>

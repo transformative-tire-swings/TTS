@@ -3,6 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 var SRC_DIR = path.join(__dirname, '/react-client/src');
 var DIST_DIR = path.join(__dirname, '/react-client/dist');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,

@@ -190,7 +190,7 @@ class App extends React.Component {
         <IntroModal />
         <ResponseCard response={this.state.response} />
 
-        <div className="ui centered grid">
+        <div className="ui centered grid ">
           <form id="form" className="ui form" action="javascript:void(0);">
             <div className="ui big labeled input" style={{marginBottom: '20px'}}>
               <i id="voiceIcon" className="inverted unmute huge icon" onClick= {this.startStopVoiceSearch.bind(this)}></i>

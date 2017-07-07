@@ -42,6 +42,14 @@
   margin-top: 20px;
 }
 
+.fullWidthTransition {
+  transition: width 2s;
+}
+
+.fullWidthTransition:hover {
+  width: 100%;
+}
+
 /* 
   React transitions testing!
 */

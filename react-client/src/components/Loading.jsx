@@ -4,7 +4,7 @@ const Loading = ({response}) =>  {
   return (
     <div>
       <p>{response.text}</p>
-      <div className="ui active inline loader"></div>
+      <div className="ui inverted active inline loader"></div>
     </div>
   );
 }

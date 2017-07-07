@@ -94,7 +94,7 @@ class App extends React.Component {
       //display frequency bars
       ///audio frequency stop
       //starts streaming of voice search requests to Houndify backend
-      document.getElementById("voiceIcon").className = "loading circle notched icon big";
+      document.getElementById("voiceIcon").className = "ui text loader"; //"loading circle notched icon big";
       // document.getElementById("textSearchButton").disabled = true;
       // document.getElementById("query").readOnly = true;
     }
@@ -132,9 +132,10 @@ class App extends React.Component {
 
 
   render () {
-    const border = {border: 0, 
-      outline: 'none', 
-      color: '#fff'
+    const border = {
+      border: 0, 
+      outlineStyle: 'none'
+      // color: '#fff'
     };
     const textStyle = {
       marginTop: '30px', 
@@ -149,23 +150,14 @@ class App extends React.Component {
     const visualizerStyle = {
       width: '100%',
       color: '#fff', //doesnt change anything
-      // padding: '10px',
       marginBottom: '10px',
       position: 'center'
-
-      // dont add opacity: '0'
     };
 
     const bkg = {
       backgroundImage: 'url(.././libs/mtns.jpg)', 
-      // backgroundRepeat: 'no-repeat', 
-      // backgroundPosition: 'center', 
       height: '100%', 
-      // width: '100%',
-      // margin: '0px',
-      // position: 'relative', 
       opacity: '0.90', 
-      // padding: '0px',
       backgroundSize: 'cover',
       overflowY: 'hidden'
     }; 
@@ -173,29 +165,32 @@ class App extends React.Component {
 
     return (
       <div className="container" style={bkg}>
+      
         <ResponseCard response={this.state.response} />
+
         <div className="ui centered grid">
           <form id="form" className="ui form" action="javascript:void(0);">
-            <div className="ui action big labeled fluid input field" style={{marginBottom: '100px'}}>
+            <div className="ui big labeled input" style={{marginBottom: '30px'}}>
               <div className="ui icon basic label button" onClick= {this.startStopVoiceSearch.bind(this)} style={border}>
-                <i id="voiceIcon" className="unmute huge icon"></i>
+                <i id="voiceIcon" className="inverted unmute huge icon"></i>
               </div>
             </div>
           </form>
         </div>
 
 
-        <div className="ui center aligned segment">
-
-          <div className='ui icon input'>
-            <input type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
-            <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
+        <div className="ui center aligned grid">
+          <div className="column six wide">
+            <div className='ui icon input' >
+              <input type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+              <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
+            </div>
           </div>
-  
         </div>
 
         <canvas className="visualizer" style={visualizerStyle}></canvas>
 
+        
       </div>
     );
   }

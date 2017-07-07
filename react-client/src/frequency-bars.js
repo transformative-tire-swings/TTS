@@ -46,6 +46,7 @@
         let canvasCtx = canvas.getContext("2d");
 
         let intendedWidth = document.querySelector('.wrapper').clientWidth;
+        console.log('CLIENT WIDTH', document.querySelector('.wrapper').clientWidth);
 
         canvas.setAttribute('width',intendedWidth);
 

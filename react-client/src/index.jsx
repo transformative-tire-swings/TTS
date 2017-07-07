@@ -172,7 +172,7 @@ class App extends React.Component {
 
 
     return (
-      <div className="container" style={bkg}>
+      <div className="wrapper" style={bkg}>
         <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
           <IntroModal /> : null

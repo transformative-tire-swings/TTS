@@ -192,10 +192,9 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-
-        <canvas className="visualizer"></canvas>
-
-
+        
+          <canvas className="wrapper visualizer" style={visualizerStyle}></canvas>
+      
       </div>
     );
   }

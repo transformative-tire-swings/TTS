@@ -1,3 +1,4 @@
+
  module.exports.bars = (that) => {
 
 
@@ -44,11 +45,10 @@
 
         let canvas = document.querySelector('.visualizer');
         let canvasCtx = canvas.getContext("2d");
+        // console.log('Wrapper class:', document.querySelector('.wrapper'));
 
-        let intendedWidth = document.querySelector('.wrapper').clientWidth; //is 1204
-        console.log('CLIENT WIDTH', document.querySelector('.wrapper').clientWidth);
-
-        canvas.setAttribute('width', intendedWidth);
+        let intendedWidth = document.querySelector('.wrapper').clientWidth;
+        canvas.setAttribute('width', 400);
 
         canvas.setAttribute('width', 900);
 
@@ -103,5 +103,3 @@
 
 
  };
-
-

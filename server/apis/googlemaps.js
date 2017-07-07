@@ -1,9 +1,5 @@
 require('dotenv').config();
 const request = require('request-promise');
-// const fredTools = require('../fred/parseTools');
-// var GoogleMapsLoader = require('google-maps'); // only for common js environments 
- 
-
 
 const googlemaps = {
 

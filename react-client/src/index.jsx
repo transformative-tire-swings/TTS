@@ -66,10 +66,14 @@ class App extends React.Component {
 
   onQuestionClick() {
     this.setState({
-      showComponent: true,
+      showComponent: !this.state.showComponent,
     });
   }
-
+  onModalClick() {
+    this.setState({
+      showComponent: false,
+    });
+  }
   setMicState() {
     this.setState({
       micOn: false
@@ -173,10 +177,9 @@ class App extends React.Component {
 
     return (
       <div className="container" style={bkg}>
-        <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} align="right" style={{}}></i>
+        <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
-          <IntroModal /> :
-          null
+          <IntroModal /> : null
         }
         <IntroModal />
         <ResponseCard response={this.state.response} />

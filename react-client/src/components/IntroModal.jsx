@@ -4,19 +4,6 @@ import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 export default class IntroModal extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      modalOpen: true
-    };
-  }
-  handleOpen() {
-    this.setState({
-      modalOpen: true,
-    });
-  }
-  handleClose() {
-    this.setState({
-      modalOpen: false,
-    });
   }
 
   render() {
@@ -25,7 +12,7 @@ export default class IntroModal extends Component {
         defaultOpen
         closeOnDocumentClick={true}
         basic
-        size='large'
+        size='small'
       >
         <Header icon='wheelchair' content='What can you do?' />
         <Modal.Content>

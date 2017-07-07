@@ -69,11 +69,7 @@ class App extends React.Component {
       showComponent: !this.state.showComponent,
     });
   }
-  onModalClick() {
-    this.setState({
-      showComponent: false,
-    });
-  }
+
   setMicState() {
     this.setState({
       micOn: false

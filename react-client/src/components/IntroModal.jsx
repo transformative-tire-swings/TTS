@@ -25,7 +25,7 @@ export default class IntroModal extends Component {
         defaultOpen
         closeOnDocumentClick={true}
         basic
-        size='small'
+        size='large'
       >
         <Header icon='wheelchair' content='What can you do?' />
         <Modal.Content>

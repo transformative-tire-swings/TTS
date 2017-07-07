@@ -185,11 +185,13 @@ class App extends React.Component {
         </div>
 
 
-        <div className="ui center aligned segment">
+        <div className="ui center aligned grid">
+          <div className="column six wide">
 
-          <div className='ui icon input'>
-            <input type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
-            <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
+            <div className='ui icon input' >
+              <input type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+              <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
+            </div>
           </div>
   
         </div>

@@ -40,9 +40,15 @@ const ResponseCard = ({response}) => {
   };
 
   return (
-    <div style={textStyle}>
-      <ElementName response={response} />
+    <div className='ui centered grid'>
+      <div className='ui header'>
+        <div style={textStyle}>
+          <ElementName response={response} />
+        </div>
+      </div>
     </div>
+
+
   );
 };
 

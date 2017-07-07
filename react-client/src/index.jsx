@@ -173,15 +173,7 @@ class App extends React.Component {
 
     return (
       <div className="container" style={bkg}>
-
-        <div className='ui centered grid'>
-          
-            <div className='ui header'>
-              <ResponseCard response={this.state.response} />
-            </div>
-
-        </div>
-
+        <ResponseCard response={this.state.response} />
         <div className="ui centered grid">
           <form id="form" className="ui form" action="javascript:void(0);">
             <div className="ui action big labeled fluid input field" style={{marginBottom: '100px'}}>
@@ -193,10 +185,15 @@ class App extends React.Component {
         </div>
 
 
-        <div className="ui center aligned segment" style={textStyle}>
-          <input type="text" value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
-          <button className="ui secondary basic button" onClick={this.textQuery.bind(this)}>Submit Text Query</button>
+        <div className="ui center aligned segment">
+
+          <div className='ui icon input'>
+            <input type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+            <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
+          </div>
+  
         </div>
+
         <canvas className="visualizer" style={visualizerStyle}></canvas>
 
       </div>

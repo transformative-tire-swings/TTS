@@ -64,7 +64,7 @@ module.exports.houndifyClient = (location, handleServerResponse, setMicState, se
 
     //Fires if error occurs during the request
     onError: function(err, info) {
-      document.getElementById("voiceIcon").className = "unmute huge icon";
+      document.getElementById("voiceIcon").className = "inverted unmute huge icon";
     },
 
     //Fires every time backend sends a speech-to-text
@@ -81,17 +81,17 @@ module.exports.houndifyClient = (location, handleServerResponse, setMicState, se
 
     //Fires when start() metods is called on search object
     onRecordingStarted: function() {
-      document.getElementById("voiceIcon").className = "selected radio icon huge red";
+      document.getElementById("voiceIcon").className = "inverted selected radio icon huge";
     },
 
     //Fires when recording ends either after stop(), abort() or
     //when server detects the end of query and responds
     //(VAD: https://houndify.com/docs#voice-activity-detection)
     onRecordingStopped: function() {
-      document.getElementById("voiceIcon").className = "unmute huge icon";
+      document.getElementById("voiceIcon").className = "inverted unmute huge icon";
       setMicState();
 
-      document.getElementById("voiceIcon").className = "unmute huge icon";
+      document.getElementById("voiceIcon").className = "inverted unmute huge icon";
       // document.getElementById("textSearchButton").disabled = false;
       // document.getElementById("query").readOnly = false;
     },

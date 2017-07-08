@@ -40,9 +40,10 @@
 
 .visualizer {
   width: 50%;
-  height: 15%;
-  top: -233px;
-  right: -1223px;
+  height: 17%;
+  top: -270px;
+  bottom: 30px;
+  right: -1190px;
   color: #fff;
   transform: rotate(-90deg);
   position: relative;

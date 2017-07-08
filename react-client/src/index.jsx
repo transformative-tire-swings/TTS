@@ -18,8 +18,7 @@ class App extends React.Component {
       micOn: false,
       textQuery: '',
       // textQuery: 'directions to 500 paris street san francisco', // put stuff to test @ beginning of app refresh
-      showComponent: false
-
+      showComponent: false,
     };
 
     const clientID = client_env.client_env.houndify_clientID;
@@ -169,8 +168,8 @@ class App extends React.Component {
 
 
     return (
-      <div className={`container ${this.state.blur ? '' : ''}`}>
-        <div className={`appBackground`}></div>
+      <div className={`container`}>
+        <div className={`appBackground`} style={this.state.micOn ? {WebkitFilter: 'blur(10px) saturate(2)'} : {}}></div>
         <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
           <IntroModal /> : null
@@ -185,13 +184,11 @@ class App extends React.Component {
             </div>
           </form>
         </div>
-        <p id="query" style={{color: 'white'}}></p>
-
 
         <div className="ui center aligned grid">
           <div className="column six wide">
             <div className='ui icon input' >
-              <p id="query"></p>
+              <p id="query" style={{color: 'white'}}></p>
               <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
               <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
             </div>

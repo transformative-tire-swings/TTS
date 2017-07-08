@@ -26,7 +26,7 @@ const ResponseCard = ({response}) => {
 
   const textStyle = {
     marginTop: '30px', 
-    marginBottom: '295px',
+    marginBottom: '285px',
     height: '300px', 
     fontSize: '43px', 
     width: '100%',

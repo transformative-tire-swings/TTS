@@ -39,19 +39,23 @@
 }
 
 .visualizer {
-  width: 50%;
-  height: 17%;
-  top: -270px;
-  bottom: 30px;
-  right: -1190px;
+  width: 53%;
+  height: 15%;
+  top: -434px;
+  bottom: 11px;
+  right: -1172px;
   color: #fff;
   transform: rotate(-90deg);
   position: relative;
   
-
 }
 
-
+#query {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
 
 
 

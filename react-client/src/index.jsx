@@ -175,11 +175,12 @@ class App extends React.Component {
 
         <div className="ui centered grid">
           <form id="form" className="ui form" action="javascript:void(0);">
-            <div className="ui big labeled input" style={{marginBottom: '30px'}}>
+            <div className="ui big labeled input" style={{marginBottom: '20px'}}>
               <i id="voiceIcon" className="inverted unmute huge icon" onClick= {this.startStopVoiceSearch.bind(this)}></i>
             </div>
           </form>
         </div>
+        <p id="query" style={{color: 'white'}}></p>
 
 
         <div className="ui center aligned grid">

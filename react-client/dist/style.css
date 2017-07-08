@@ -50,6 +50,35 @@
   width: 100%;
 }
 
+/* App background */
+.appBackground {
+  background-image: url('./libs/mtns.jpg');
+  /*background: red;*/
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0.90;
+  background-size: cover;
+  overflow-y: hidden;
+  z-index: -1;
+}
+
+.appBackground {
+  background-image: url('./libs/mtns.jpg');
+  /*background: red;*/
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0.90;
+  background-size: cover;
+  overflow-y: hidden;
+  z-index: -1;
+}
+
 /* 
   React transitions testing!
 */

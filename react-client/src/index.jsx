@@ -7,8 +7,6 @@ import houndifyclient from './houndify-client.js';
 import frequencyBars from './frequency-bars.js';
 import ResponseCard from './components/ResponseCard.jsx';
 import IntroModal from './components/IntroModal.jsx';
-import classNames from 'classnames';
-import { CSSTransitionGroup } from 'react-transition-group';
 
 class App extends React.Component {
 
@@ -18,7 +16,8 @@ class App extends React.Component {
       response: {type: 'text', api: 'default', text: 'If you can dream it, we can do it', data: Object},
       location: {},
       micOn: false,
-      textQuery: '',
+      // textQuery: '',
+      textQuery: 'directions to 500 paris street san francisco',
       showComponent: false
 
     };
@@ -40,6 +39,7 @@ class App extends React.Component {
             lon: data.coords.longitude
           }
         });
+        this.textQuery();
       });
   }
 
@@ -141,16 +141,7 @@ class App extends React.Component {
     });
   }
 
-
   render () {
-    var classes = classNames( this.props.className, {
-        'grid': true,
-        'ui': true, 
-        'center': true,
-        'aligned': true,
-        'mExample': true
-    } );
-
     const border = {
       border: 0,
       outlineStyle: 'none'
@@ -173,16 +164,13 @@ class App extends React.Component {
     };
 
     const bkg = {
-      backgroundImage: 'url(.././libs/mtns.jpg)',
-      height: '100%',
-      opacity: '0.90',
-      backgroundSize: 'cover',
-      overflowY: 'hidden'
+      
     };
 
 
     return (
-      <div className="wrapper" style={bkg}>
+      <div className={`container ${this.state.blur ? '' : ''}`}>
+        <div className={`appBackground`}></div>
         <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
           <IntroModal /> : null
@@ -203,17 +191,13 @@ class App extends React.Component {
         <div className="ui center aligned grid">
           <div className="column six wide">
             <div className='ui icon input' >
+              <p id="query"></p>
               <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
               <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
             </div>
           </div>
         </div>
-        {/*<CSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>*/}
-        {/*</CSSTransitionGroup>*/}
-        
+
         <canvas className="wrapper visualizer" style={visualizerStyle}></canvas>
       
       </div>

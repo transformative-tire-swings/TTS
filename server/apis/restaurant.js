@@ -24,6 +24,7 @@ const restaurant = {
     .then((yelpData) => {
 
       let restaurantData = yelpData.businesses[0];
+      console.log(yelpData.businesses.slice(0, 3));
       let restaurantDetails = {
         name: restaurantData.name,
         image: restaurantData.image_url,

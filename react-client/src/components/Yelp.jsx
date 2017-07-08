@@ -4,7 +4,8 @@ class Yelp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: ''
+      restaurants: this.props.response,
+      current: this.props.response.data[0]
     };
     // this.nextRestaurant = this.nextRestaurant.bind(this);
   
@@ -25,17 +26,16 @@ class Yelp extends React.Component {
       textIndent: '10px',
       textAlign: 'center'
     };
-    console.log('PROPS', this.props.response.data.rating);
 
     let stars = [];
-    for (var i = 1; i <= this.props.response.data.rating; i++) {
+    for (var i = 1; i <= this.state.current.rating; i++) {
       stars.push('star');
     }
-    if (this.props.response.data.rating % 1 > 0) {
+    if (this.state.current.rating % 1 > 0) {
       stars.push('star half');
     }
     let dollars = [];
-    for (var i = 1; i <= this.props.response.data.price.length; i++) {
+    for (var i = 1; i <= this.state.current.price.length; i++) {
       dollars.push('dollar');
 
     }
@@ -44,7 +44,7 @@ class Yelp extends React.Component {
       <div>
         <div className="ui centered grid">
           <div style={{color: 'white', marginBottom: '30px', textAlign: 'center'}} className="ui centered row">{this.props.response.text}</div>
-          <div className="ui centered six wide column">
+          <div className="ui six wide column">
             <div className="ui centered row">
               <div className="ui segment">
                 <div className="ui fluid image">
@@ -68,7 +68,7 @@ class Yelp extends React.Component {
               </div>
             </div>
           </div>
-          <i className="inverted arrow right icon" style={{marginLeft: '0'}}></i>
+          <i className="inverted arrow right icon"></i>
         </div>
       </div>
     );

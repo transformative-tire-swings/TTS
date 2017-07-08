@@ -24,7 +24,7 @@ export default class IntroModal extends React.Component {
         onClose={this.handleClose}
       >
         <Image width='100%' src='https://zortrax.com/wp-content/uploads/2016/06/wave.gif' />
-        <Modal.Header style={{textAlign: 'center', marginTop: '-300px'}}>Hello Marcus, what can you do?</Modal.Header>
+        <Modal.Header style={{textAlign: 'center', marginTop: '-100px'}}>Hello Marcus, what can you do?</Modal.Header>
         <Modal.Content style={{margin: '0 auto', width: '30%'}}>
           <Modal.Description>
             <div>

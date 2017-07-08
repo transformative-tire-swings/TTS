@@ -14,6 +14,34 @@ const Weather = ({response}) => {
       textIndent: '10px',
       textAlign: 'center'
   };
+
+  let weatherImagePath = '../libs/weather/clear.gif';
+  if (response.data.weather[0].id < 300) {
+    weatherImagePath = '../libs/weather/thunderstorm.gif';
+  } else if (response.data.weather[0].id < 500) {
+    weatherImagePath = '../libs/weather/drizzle.gif';
+  } else if (response.data.weather[0].id < 600) {
+    weatherImagePath = '../libs/weather/rain.gif';
+  } else if (response.data.weather[0].id < 700) {
+    weatherImagePath = '../libs/weather/snow.gif';
+  } else if (response.data.weather[0].id < 800) {
+    weatherImagePath = '../libs/weather/mist.gif';
+  } else if (response.data.weather[0].id === 801) {
+    weatherImagePath = '../libs/weather/few-clouds.gif';
+  } else if (response.data.weather[0].id === 802) {
+    weatherImagePath = '../libs/weather/scattered-clouds.gif';
+  } else if (response.data.weather[0].id === 803 || response.data.weather[0].id === 804) {
+    weatherImagePath = '../libs/weather/cloudy.gif';
+  } else if (response.data.weather[0].id < 951 && response.data.weather[0].id > 804) {
+    weatherImagePath = '../libs/weather/danger.jpeg';
+  } else if (response.data.weather[0].id > 951 && response.data.weather[0].id < 957) {
+    weatherImagePath = '../libs/weather/breeze.gif';
+  } else if (response.data.weather[0].id < 961 && response.data.weather[0].id >= 957) {
+    weatherImagePath = '../libs/weather/windy.gif';
+  } else if (response.data.weather[0].id >= 961) {
+    weatherImagePath = '../libs/weather/danger.gif';
+  }
+
   return (
     <div>
       <div className="ui centered grid">
@@ -23,7 +51,7 @@ const Weather = ({response}) => {
       <div className="ui centered row">
       <div className="ui segment">
       <div className="ui fluid image">
-        <img src={"http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"}/>
+        <img style={{maxHeight: '300px'}} src={weatherImagePath}/>
       </div>
 
         <div style={contentStyle}>{response.data.weather[0].description.split(' ').reduce((acc, val) => (acc + val[0].toUpperCase() + val.slice(1) + ' '), '')}</div>

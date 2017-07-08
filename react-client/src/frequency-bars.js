@@ -45,9 +45,10 @@
         let canvas = document.querySelector('.visualizer');
         let canvasCtx = canvas.getContext("2d");
 
-        let intendedWidth = document.querySelector('.wrapper').clientWidth;
+        let intendedWidth = document.querySelector('.wrapper').clientWidth; //is 1204
+        console.log('CLIENT WIDTH', document.querySelector('.wrapper').clientWidth);
 
-        canvas.setAttribute('width',intendedWidth);
+        canvas.setAttribute('width', intendedWidth);
 
         canvas.setAttribute('width', 900);
 
@@ -66,7 +67,7 @@
 
           analyser.getFloatFrequencyData(dataArray);
 
-          canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+          canvasCtx.fillStyle = 'rgb(0, 0, 0)'; //'rgba(0, 0, 200, 0)'; //'rgb(0, 0, 0)'; //black
           canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
           let barWidth = (WIDTH / bufferLength) * 1;
@@ -75,7 +76,7 @@
 
           if (that.state.micOn) {
             for (let i = 0; i < bufferLength; i++) {
-              barHeight = (dataArray[i] + 140)*1;
+              barHeight = (dataArray[i] + 140) * 1;
 
               canvasCtx.fillStyle = 'white'; //'rgb(' /*+ Math.floor(barHeight)*/ + '0,0,0)';
               canvasCtx.fillRect(x, HEIGHT - barHeight * 2, barWidth, barHeight * 2);

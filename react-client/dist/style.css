@@ -26,7 +26,7 @@
   box-shadow: none;
   word-wrap: normal;
   word-break: break-all;
-  white-space: normal 
+  white-space: normal;
 }
 
 /*.response:hover {
@@ -37,3 +37,30 @@
   margin-top: 20px !important;
   margin-bottom: 30px !important;
 }
+
+.visualizer {
+  width: 50%;
+  height: 17%;
+  top: -270px;
+  bottom: 30px;
+  right: -1190px;
+  color: #fff;
+  transform: rotate(-90deg);
+  position: relative;
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

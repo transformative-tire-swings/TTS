@@ -27,12 +27,15 @@ const Yelp = ({response}) => {
 
   return (
   	<div>
-        <div className="ui centered grid" style={{color: 'white'}}>
-        <p style={{marginBottom: '50px'}}>{response.text}</p>
-        </div>
-
-        <div className="ui grid">
+        <div className="ui centered grid">
         <div className="ui centered eight wide column">
+          <div style={{color: 'white'}} className="ui centered row">
+            <p style={{marginBottom: '50px'}}>{response.text}</p>
+          </div>
+
+
+
+        <div className="ui centered row">
         <div className="ui segment">
         <div className="ui fluid image">
         <div className="ui green right ribbon label">
@@ -51,6 +54,7 @@ const Yelp = ({response}) => {
         <div style={contentStyle}>Address: {response.data.address}</div>
         <div style={contentStyle}>  
           <a href={response.data.website}>More Information about {response.data.name}</a>
+        </div>
         </div>
         </div>
         </div>

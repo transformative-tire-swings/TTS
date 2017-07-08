@@ -11,7 +11,8 @@ const Yelp = ({response}) => {
       whiteSpace: 'normal',
       color: 'black',
       fontWeight: 'normal',
-      textIndent: '10px'
+      textIndent: '10px',
+      textAlign: 'center'
   };
   let stars = [];
   for (var i = 1; i <= response.data.rating; i++) {
@@ -28,30 +29,26 @@ const Yelp = ({response}) => {
   return (
   	<div>
         <div className="ui centered grid">
-        <div className="ui centered eight wide column">
-          <div style={{color: 'white'}} className="ui centered row">
-            <p style={{marginBottom: '50px'}}>{response.text}</p>
-          </div>
+        <div style={{color: 'white', marginBottom: '30px', textAlign: 'center'}} className="ui centered row">{response.text}</div>
 
-
-
+        <div className="ui centered six wide column">
         <div className="ui centered row">
         <div className="ui segment">
         <div className="ui fluid image">
-        <div className="ui green right ribbon label">
+        <div style={{marginLeft: '0'}} className="ui green right ribbon label">
         {dollars.map((dollar) => {
           return <i className={dollar + " icon"}></i>
         })}
         </div>
-        <div className="ui yellow ribbon label">
+        <div style={{marginLeft: '0'}} className="ui yellow ribbon label">
         {stars.map((star, index) => {
           return <i className={star + " icon"}></i>
         })}
         </div>
-          <img src={response.data.image}/>
+          <img style={{maxHeight: '300px'}} src={response.data.image}/>
         </div>
-        <div style={contentStyle}>Phone Number: {response.data.phone}</div>
-        <div style={contentStyle}>Address: {response.data.address}</div>
+        <div style={contentStyle}>{response.data.address}</div>
+        <div style={contentStyle}>{response.data.phone}</div>
         <div style={contentStyle}>  
           <a href={response.data.website}>More Information about {response.data.name}</a>
         </div>

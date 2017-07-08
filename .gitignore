@@ -9,7 +9,6 @@ logs
 
 # Env
 *.env
-react-client/src/client_env.js
 
 # Runtime data
 pids
@@ -39,5 +38,5 @@ bower_components/
 package-lock.json
 
 # Ignore client_env.js
-react-client/src/client_env.js
+# react-client/src/client_env.js
 

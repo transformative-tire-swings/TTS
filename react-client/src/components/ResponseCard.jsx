@@ -5,10 +5,11 @@ import Weather from './Weather.jsx';
 import Yelp from './Yelp.jsx';
 import EasterEgg from './EasterEgg.jsx';
 import Loading from './Loading.jsx';
+import GoogleMaps from './GoogleMaps.jsx';
 
 const ResponseCard = ({response}) => {
   let ElementName;
-  console.log('response from responseCard: ',response);
+  console.log('response from responseCard: ', response);
   //default state: before making any request
   if(response.api === "default") {
     ElementName = DefaultContent;
@@ -22,8 +23,13 @@ const ResponseCard = ({response}) => {
     ElementName = EasterEgg;
   } else if (response.api === "loading") {
     ElementName = Loading;
+  } else if (response.api === "googlemap") {
+    ElementName = GoogleMaps;
   }
 
+  console.log('RESPONSE FROM SERVER:', response.data, 'type:', typeof response.data);
+
+  const divStyle = {width: '400px', marginTop: '100px'};
   const textStyle = {
     marginTop: '30px', 
     marginBottom: '285px',
@@ -40,7 +46,7 @@ const ResponseCard = ({response}) => {
 
   return (
     <div className='ui centered grid'>
-      <div className='ui header'>
+      <div className={`ui header ${response.api === 'googlemap' ? 'fullWidthTransition' : '' }`}>
         <div style={textStyle}>
           <ElementName response={response} />
         </div>

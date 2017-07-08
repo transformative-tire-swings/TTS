@@ -17,7 +17,9 @@ class App extends React.Component {
       location: {},
       micOn: false,
       textQuery: '',
+      // textQuery: 'directions to 500 paris street san francisco', // put stuff to test @ beginning of app refresh
       showComponent: false
+
     };
 
     const clientID = client_env.client_env.houndify_clientID;
@@ -37,6 +39,7 @@ class App extends React.Component {
             lon: data.coords.longitude
           }
         });
+        // this.textQuery(); // uncomment to run query on app refresh
       });
   }
 
@@ -138,7 +141,6 @@ class App extends React.Component {
     });
   }
 
-
   render () {
     const border = {
       border: 0,
@@ -154,18 +156,21 @@ class App extends React.Component {
       wordBreak: 'normal',
       whiteSpace: 'normal'
     };
+    const visualizerStyle = {
+      width: '100%',
+      color: '#fff', //doesnt change anything
+      marginBottom: '10px',
+      position: 'center'
+    };
 
     const bkg = {
-      backgroundImage: 'url(.././libs/mtns.jpg)',
-      height: '100%',
-      opacity: '0.90',
-      backgroundSize: 'cover',
-      overflowY: 'hidden'
+      
     };
 
 
     return (
-      <div className="wrapper" style={bkg}>
+      <div className={`container ${this.state.blur ? '' : ''}`}>
+        <div className={`appBackground`}></div>
         <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
           <IntroModal /> : null
@@ -173,7 +178,7 @@ class App extends React.Component {
         <IntroModal />
         <ResponseCard response={this.state.response} />
 
-        <div className="ui centered grid">
+        <div className="ui centered grid ">
           <form id="form" className="ui form" action="javascript:void(0);">
             <div className="ui big labeled input" style={{marginBottom: '20px'}}>
               <i id="voiceIcon" className="inverted unmute huge icon" onClick= {this.startStopVoiceSearch.bind(this)}></i>
@@ -186,15 +191,15 @@ class App extends React.Component {
         <div className="ui center aligned grid">
           <div className="column six wide">
             <div className='ui icon input' >
-              <input type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+              <p id="query"></p>
+              <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
               <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
             </div>
           </div>
         </div>
 
-        <canvas className="visualizer"></canvas>
-
-
+        <canvas className="wrapper visualizer" style={visualizerStyle}></canvas>
+      
       </div>
     );
   }

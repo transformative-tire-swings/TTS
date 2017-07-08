@@ -10,7 +10,6 @@ export default class IntroModal extends React.Component {
   }
 
   handleClose() {
-    console.log('closing handler');
     this.setState({
       modalOpen: false,
     });

@@ -26,7 +26,7 @@ const ResponseCard = ({response}) => {
 
   const textStyle = {
     marginTop: '30px', 
-    marginBottom: '100px', //bring up or down textbox --280 keep
+    marginBottom: '295px',
     height: '300px', 
     fontSize: '43px', 
     width: '100%',

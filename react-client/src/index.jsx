@@ -16,8 +16,8 @@ class App extends React.Component {
       response: {type: 'text', api: 'default', text: 'If you can dream it, we can do it', data: Object},
       location: {},
       micOn: false,
-      // textQuery: '',
-      textQuery: 'directions to 500 paris street san francisco',
+      textQuery: '',
+      // textQuery: 'directions to 500 paris street san francisco', // put stuff to test @ beginning of app refresh
       showComponent: false
 
     };
@@ -39,7 +39,7 @@ class App extends React.Component {
             lon: data.coords.longitude
           }
         });
-        this.textQuery();
+        // this.textQuery(); // uncomment to run query on app refresh
       });
   }
 

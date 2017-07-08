@@ -43,7 +43,9 @@
 }
 
 .fullWidthTransition {
-  transition: width 2s;
+  width: 50%;
+  transition: width 3s ease-in;
+  transition-timing-function: ease-out;
 }
 
 .fullWidthTransition:hover {

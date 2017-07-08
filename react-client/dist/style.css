@@ -44,12 +44,13 @@
 
 .fullWidthTransition {
   width: 50%;
-  transition: width 3s ease-in;
-  transition-timing-function: ease-out;
+  transition: all 0.5s;
+  transition-timing-function: linear;
 }
 
 .fullWidthTransition:hover {
   width: 100%;
+  /*transform: scale(1.25);*/
 }
 
 /* App background */
@@ -65,6 +66,7 @@
   background-size: cover;
   overflow-y: hidden;
   z-index: -1;
+  transition: all 2s;
 }
 
 .appBackground {

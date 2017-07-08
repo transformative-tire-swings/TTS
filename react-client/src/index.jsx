@@ -155,20 +155,9 @@ class App extends React.Component {
       wordBreak: 'normal',
       whiteSpace: 'normal'
     };
-    const visualizerStyle = {
-      width: '100%',
-      color: '#fff', //doesnt change anything
-      marginBottom: '10px',
-      position: 'center'
-    };
-
-    const bkg = {
-      
-    };
-
 
     return (
-      <div className={`container`}>
+      <div className={`wrapper`}>
         <div className={`appBackground`} style={this.state.micOn ? {WebkitFilter: 'blur(10px) saturate(2)'} : {}}></div>
         <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
@@ -195,7 +184,7 @@ class App extends React.Component {
           </div>
         </div>
 
-        <canvas className="wrapper visualizer" style={visualizerStyle}></canvas>
+        <canvas className="visualizer"></canvas>
       
       </div>
     );

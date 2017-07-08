@@ -69,7 +69,7 @@
   transition: all 2s;
 }
 
-.appBackground {
+/*.appBackground {
   background-image: url('./libs/mtns.jpg');
   /*background: red;*/
   position: absolute;
@@ -81,7 +81,7 @@
   background-size: cover;
   overflow-y: hidden;
   z-index: -1;
-}
+}*/
 
 /* 
   React transitions testing!

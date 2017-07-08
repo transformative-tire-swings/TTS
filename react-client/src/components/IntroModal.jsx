@@ -1,4 +1,5 @@
 import React from 'react';
+import Tabs from './Tabs.jsx';
 import { Button, Header, Icon, Modal, Image } from 'semantic-ui-react';
 
 export default class IntroModal extends React.Component {
@@ -23,16 +24,10 @@ export default class IntroModal extends React.Component {
         size='fullscreen'
         onClose={this.handleClose}
       >
-        <Image width='100%' src='https://zortrax.com/wp-content/uploads/2016/06/wave.gif' />
         <Modal.Header style={{textAlign: 'center', marginTop: '-100px'}}>Hello Marcus, what can you do?</Modal.Header>
-        <Modal.Content style={{margin: '0 auto', width: '30%'}}>
+        <Modal.Content style={{margin: '0 auto', width: '70%'}}>
           <Modal.Description>
-            <div>
-              <h3>Directions</h3>
-              <h3>Weather</h3>
-              <h3>Food Recommendations</h3>
-              <h3>GOATS</h3>
-            </div>
+            <Tabs />
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>

@@ -153,13 +153,6 @@ class App extends React.Component {
       wordWrap: 'normal',
       wordBreak: 'normal',
       whiteSpace: 'normal'
-      //dont add opacity
-    };
-    const visualizerStyle = {
-      width: '100%',
-      color: '#fff', //doesnt change anything
-      marginBottom: '10px',
-      position: 'center'
     };
 
     const bkg = {
@@ -172,7 +165,7 @@ class App extends React.Component {
 
 
     return (
-      <div className="container" style={bkg}>
+      <div className="wrapper" style={bkg}>
         <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
           <IntroModal /> : null
@@ -198,7 +191,7 @@ class App extends React.Component {
           </div>
         </div>
 
-        <canvas className="visualizer" style={visualizerStyle}></canvas>
+        <canvas className="visualizer"></canvas>
 
 
       </div>

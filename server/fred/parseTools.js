@@ -106,9 +106,9 @@ const Tools = {
     return weatherText;
 
   },
-  constructFoodText: (originalString, restaurantData) => {
-    return 'I recommend ' + restaurantData.name;
-  }
+  // constructFoodText: (originalString, restaurantData) => {
+  //   return 'I recommend ' + restaurantData.name;
+  // }
 
 };
 

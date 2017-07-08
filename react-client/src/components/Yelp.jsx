@@ -4,12 +4,12 @@ class Yelp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: this.props.response,
+      restaurants: this.props.response.data,
       current: this.props.response.data[0]
     };
     // this.nextRestaurant = this.nextRestaurant.bind(this);
   
-
+    console.log('state.res', this.state.restaurants);
   }
   render() {
 

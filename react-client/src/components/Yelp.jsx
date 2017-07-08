@@ -1,64 +1,79 @@
 import React from 'react';
 
-const Yelp = ({response}) => {
-	const contentStyle = {
-    marginTop: '20px',
-    fontSize: '20px', 
-    borderStyle: 'none', 
-    boxShadow: 'none', 
-    wordWrap: 'normal', 
-    wordBreak: 'normal', 
-    whiteSpace: 'normal',
-    color: 'black',
-    fontWeight: 'normal',
-    textIndent: '10px',
-    textAlign: 'center'
-  };
-  let stars = [];
-  for (var i = 1; i <= response.data.rating; i++) {
-    stars.push('star');
-  }
-  if (response.data.rating % 1 > 0) {
-    stars.push('star half');
-  }
-  let dollars = [];
-  for (var i = 1; i <= response.data.price.length; i++) {
-    dollars.push('dollar');
-  }
+class Yelp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      current: ''
+    };
+    // this.nextRestaurant = this.nextRestaurant.bind(this);
+  
 
-  return (
-    <div>
-      <div className="ui centered grid">
-        <div style={{color: 'white', marginBottom: '30px', textAlign: 'center'}} className="ui centered row">{response.text}</div>
-        <div className="ui centered six wide column">
-          <div className="ui centered row">
-            <div className="ui segment">
-              <div className="ui fluid image">
-                <div style={{marginLeft: '0'}} className="ui green right ribbon label">
-                  {dollars.map((dollar) => {
-                    return <i className={dollar + ' icon'}></i>;
-                  })}
+  }
+  render() {
+
+    const contentStyle = {
+      marginTop: '20px',
+      fontSize: '20px', 
+      borderStyle: 'none', 
+      boxShadow: 'none', 
+      wordWrap: 'normal', 
+      wordBreak: 'normal', 
+      whiteSpace: 'normal',
+      color: 'black',
+      fontWeight: 'normal',
+      textIndent: '10px',
+      textAlign: 'center'
+    };
+    console.log('PROPS', this.props.response.data.rating);
+
+    let stars = [];
+    for (var i = 1; i <= this.props.response.data.rating; i++) {
+      stars.push('star');
+    }
+    if (this.props.response.data.rating % 1 > 0) {
+      stars.push('star half');
+    }
+    let dollars = [];
+    for (var i = 1; i <= this.props.response.data.price.length; i++) {
+      dollars.push('dollar');
+
+    }
+
+    return (
+      <div>
+        <div className="ui centered grid">
+          <div style={{color: 'white', marginBottom: '30px', textAlign: 'center'}} className="ui centered row">{this.props.response.text}</div>
+          <div className="ui centered six wide column">
+            <div className="ui centered row">
+              <div className="ui segment">
+                <div className="ui fluid image">
+                  <div style={{marginLeft: '0'}} className="ui green right ribbon label">
+                    {dollars.map((dollar) => {
+                      return <i className={dollar + ' icon'}></i>;
+                    })}
+                  </div>
+                  <div style={{marginLeft: '0'}} className="ui yellow ribbon label">
+                    {stars.map((star, index) => {
+                      return <i className={star + " icon"}></i>;
+                    })}
+                  </div>
+                  <img style={{maxHeight: '300px'}} src={this.props.response.data.image}/>
                 </div>
-                <div style={{marginLeft: '0'}} className="ui yellow ribbon label">
-                  {stars.map((star, index) => {
-                    return <i className={star + " icon"}></i>;
-                  })}
+                <div style={contentStyle}>{this.props.response.data.address}</div>
+                <div style={contentStyle}>{this.props.response.data.phone}</div>
+                <div style={contentStyle}>  
+                  <a href={this.props.response.data.website}>More Information about {this.props.response.data.name}</a>
                 </div>
-                <img style={{maxHeight: '300px'}} src={response.data.image}/>
-              </div>
-              <div style={contentStyle}>{response.data.address}</div>
-              <div style={contentStyle}>{response.data.phone}</div>
-              <div style={contentStyle}>  
-                <a href={response.data.website}>More Information about {response.data.name}</a>
               </div>
             </div>
           </div>
+          <i className="inverted arrow right icon" style={{marginLeft: '0'}}></i>
         </div>
-        <i className="inverted arrow right icon" style={{position: 'center'}}></i>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Yelp;
 

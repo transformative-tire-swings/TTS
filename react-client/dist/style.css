@@ -21,8 +21,9 @@
 /* App background */
 .appBackground {
   background-image: url('./libs/mtns.jpg');
+  /*background: red;*/
   position: absolute;
-  margin: 0;
+  margin: 0 auto;
   left: 0;
   right: 0;
   height: 100%;
@@ -30,58 +31,9 @@
   background-size: cover;
   overflow-y: hidden;
   z-index: -1;
-}*/
-
-/* 
-  React transitions testing!
-*/
-.mExample {
-  width: 100%;
-  position: relative;
-  left: -95%;
-  transition: left 2s, background 2s;
-  background: rgba(0, 0, 0, 1);
+  transition: all 2s;
 }
 
-.mExample:hover {
-  left: 0%;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.mExample:focus {
-  left: 0%;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.example {
-  height: 200px;
-  width: 200px;
-  background: white;
-  transition: left 5s;
-  position: relative;
-}
-
-.example:hover {
-  background: red;
-  left: -200px;
-}
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
 .visualizer {
   width: 53%;
   height: 15%;
@@ -91,7 +43,6 @@
   color: #fff;
   transform: rotate(-90deg);
   position: relative;
-  
 }
 
 #query {

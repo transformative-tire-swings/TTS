@@ -119,25 +119,29 @@ class App extends React.Component {
   //for testing only: handle user text input
   textQuery() {
     let query = this.state.textQuery;
-    $.ajax({
-      url: '/voice',
-      method: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify({
-        RawTranscription: query,
-        WrittenResponseLong: query,
-        location: this.state.location}),
-      success: (data) => {
-        console.log('text query response from server: ', data.data);
-        this.setState({
-          response: data
-        });
-        this.responseTextToSpeech(data.text);
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
+    if (!query.includes('goat')) {
+      $.ajax({
+        url: '/voice',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+          RawTranscription: query,
+          WrittenResponseLong: query,
+          location: this.state.location}),
+        success: (data) => {
+          console.log('text query response from server: ', data.data);
+          this.setState({
+            response: data
+          });
+          this.responseTextToSpeech(data.text);
+        },
+        error: (err) => {
+          console.log('err', err);
+        }
+      });
+    } else {
+      this.handleServerResponse(null, {type: "text", api: "goat", text: "Goats live for 15 to 18 years, and every one of those years is awesome"});
+    }
   }
 
   render () {

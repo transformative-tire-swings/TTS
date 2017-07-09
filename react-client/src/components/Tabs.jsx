@@ -13,14 +13,14 @@ const panes = [
     menuItem: { key: 'weather', icon: 'sun', content: 'Weather' },
     render: () =>
       <Tab.Pane>
-        <Image fluid src='../libs/directions.png' />
+        <Image fluid src='../libs/weather.png' />
       </Tab.Pane>,
   },
   {
     menuItem: { key: 'food', icon: 'yelp', content: 'Food Recommendations' },
     render: () =>
       <Tab.Pane>
-        <Image fluid src='../libs/directions.png' />
+        <Image fluid src='../libs/yelp.png' />
       </Tab.Pane>,
   },
   {

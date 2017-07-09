@@ -29,7 +29,7 @@ const googlemaps = {
         let apiResponse = {
           type: 'widget',
           api: 'googlemap',
-          text: 'You can do this.',
+          text: `Directions to ${destination}`,
           data: data
         };
 

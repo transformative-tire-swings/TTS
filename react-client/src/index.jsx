@@ -188,8 +188,6 @@ class App extends React.Component {
           </div>
         </div>
 
-        {/* <canvas className="visualizer "></canvas> */}
-
       </div>
     );
   }

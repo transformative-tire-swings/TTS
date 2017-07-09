@@ -41,6 +41,8 @@ module.exports.houndifyClient = (location, handleServerResponse, setMicState, se
         if (customResponse.WrittenResponseLong.toLowerCase().includes('dance')) {
           console.log('Marcus Dance!!!');
           handleServerResponse(null, {type: "text", api: "easteregg", text: "Marcus Dance!!!"});
+        } else if (customResponse.WrittenResponseLong.toLowerCase().includes('goat')) {
+          handleServerResponse(null, {type: "text", api: "goat", text: "Goats live for 15 to 18 awesome years. Bah-ah-ah-ah-ah-ah-ah"});
         } else {
           // Send voice result to server
           setLoadingState();

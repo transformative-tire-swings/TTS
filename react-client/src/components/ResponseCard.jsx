@@ -6,6 +6,7 @@ import Yelp from './Yelp.jsx';
 import EasterEgg from './EasterEgg.jsx';
 import Loading from './Loading.jsx';
 import GoogleMaps from './GoogleMaps.jsx';
+import Goat from './Goat.jsx';
 
 const ResponseCard = ({response}) => {
   let ElementName;
@@ -25,6 +26,8 @@ const ResponseCard = ({response}) => {
     ElementName = Loading;
   } else if (response.api === "googlemap") {
     ElementName = GoogleMaps;
+  } else if (response.api === "goat") {
+    ElementName = Goat;
   }
 
   console.log('RESPONSE FROM SERVER:', response.data, 'type:', typeof response.data);

@@ -23,25 +23,28 @@ const restaurant = {
     return request(options)
     .then((yelpData) => {
 
-      let restaurantData = yelpData.businesses[0];
-      let restaurantDetails = {
-        name: restaurantData.name,
-        image: restaurantData.image_url,
-        numReviews: restaurantData.review_count,
-        rating: restaurantData.rating,
-        website: restaurantData.url.split('?')[0],
-        price: restaurantData.price,
-        address: restaurantData.location.display_address.join('\n'),
-        phone: restaurantData.display_phone
-      }
-      
-      let response = fredTools.constructFoodText(originalStr, restaurantData);
+      let restaurantData = yelpData.businesses.slice(0, 5);
+
+      var allResDetails = restaurantData.map( (el) => {
+        return {
+          name: el.name,
+          image: el.image_url,
+          numReviews: el.review_count,
+          rating: el.rating,
+          website: el.url.split('?')[0],
+          price: el.price,
+          address: el.location.display_address.join('\n'),
+          phone: el.display_phone,
+          text: `I recommend ${el.name}`
+        };
+      });
+      console.log('allresdeets', allResDetails);
       
       let apiResponse = {
         type: 'widget',
         api: 'yelp',
-        text: response,
-        data: restaurantDetails
+        text: allResDetails[0].text,
+        data: allResDetails
       };
       return apiResponse;
     });

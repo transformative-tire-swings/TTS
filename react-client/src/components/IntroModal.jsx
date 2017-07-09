@@ -24,7 +24,7 @@ export default class IntroModal extends React.Component {
         size='fullscreen'
         onClose={this.handleClose}
       >
-        <Modal.Header style={{textAlign: 'center', marginTop: '-100px', fontSize: '36px'}}>Hello Marcus, what can you do?</Modal.Header>
+        <Modal.Header style={{textAlign: 'center', fontSize: '36px'}}>Hello Marcus, what can you do?</Modal.Header>
         <Modal.Content style={{margin: '0 auto', width: '70%'}}>
           <Modal.Description>
             <Tabs />

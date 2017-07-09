@@ -157,8 +157,8 @@ class App extends React.Component {
     };
 
     return (
-      <div className={`wrapper`}>
-        <div className={`appBackground`} style={this.state.micOn ? {WebkitFilter: 'blur(10px) saturate(2)'} : {}}></div>
+      <div className={'wrapper'}>
+        <div className={'appBackground'} style={this.state.micOn ? {WebkitFilter: 'blur(10px) saturate(2)'} : {}}></div>
         <i className="question inverted icon big" onClick={this.onQuestionClick.bind(this)} style={{marginTop: '10px'}}></i>
         {this.state.showComponent ?
           <IntroModal /> : null
@@ -176,16 +176,16 @@ class App extends React.Component {
 
         <div className="ui center aligned grid">
           <div className="column six wide">
+            <p id="query" style={{color: 'white'}}></p>
             <div className='ui icon input' >
-              <p id="query" style={{color: 'white'}}></p>
-              <input onKeyPress={e => { if (e.key === 'Enter') {this.textQuery();} }} type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
+              <input onKeyPress={e => { if (e.key === 'Enter') { this.textQuery(); } }} type="text" placeholder='Type instead...' value={this.state.textQuery} onChange={this.inputChange.bind(this)}/>
               <i className='circular search link icon' onClick={this.textQuery.bind(this)}></i>
             </div>
           </div>
         </div>
 
-        <canvas className="visualizer"></canvas>
-      
+        {/* <canvas className="visualizer "></canvas> */}
+
       </div>
     );
   }

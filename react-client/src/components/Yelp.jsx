@@ -14,8 +14,14 @@ class Yelp extends React.Component {
     console.log('IDX IN CONSTR', this.state.idx);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      idx: 0,
+      current: nextProps.response.data[0]
+    });
+  }
+
   nextRestaurant() {
-    console.log('IDX', this.state.idx);
     this.setState({
       idx: this.state.idx === 4 ? 4 : this.state.idx + 1
     }, () => {
@@ -26,7 +32,6 @@ class Yelp extends React.Component {
   }
 
   backRestaurant() {
-    console.log('IDX', this.state.idx);
     this.setState({
       idx: this.state.idx === 0 ? 0 : this.state.idx - 1
     }, () => {

@@ -105,6 +105,11 @@ i.icon.arrow.right {
   margin-top: 15%;
 }
 
+i.icon.arrow.left {
+  padding-right: 40px;
+  margin-top: 15%;
+}
+
 .wrapper {
   /*border: 1px solid red;*/
   margin-bottom: 0;

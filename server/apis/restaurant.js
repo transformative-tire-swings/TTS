@@ -23,7 +23,7 @@ const restaurant = {
     return request(options)
     .then((yelpData) => {
 
-      let restaurantData = yelpData.businesses.slice(0, 3);
+      let restaurantData = yelpData.businesses.slice(0, 5);
 
       var allResDetails = restaurantData.map( (el) => {
         return {

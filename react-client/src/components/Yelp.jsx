@@ -5,12 +5,37 @@ class Yelp extends React.Component {
     super(props);
     this.state = {
       restaurants: this.props.response.data,
+      idx: 0,
       current: this.props.response.data[0]
     };
-    // this.nextRestaurant = this.nextRestaurant.bind(this);
+    this.nextRestaurant = this.nextRestaurant.bind(this);
+    this.backRestaurant = this.backRestaurant.bind(this);
   
-    console.log('state.res', this.state.restaurants);
+    console.log('IDX IN CONSTR', this.state.idx);
   }
+
+  nextRestaurant() {
+    console.log('IDX', this.state.idx);
+    this.setState({
+      idx: this.state.idx === 4 ? 4 : this.state.idx + 1
+    }, () => {
+      this.setState({
+        current: this.props.response.data[this.state.idx]
+      });
+    });
+  }
+
+  backRestaurant() {
+    console.log('IDX', this.state.idx);
+    this.setState({
+      idx: this.state.idx === 0 ? 0 : this.state.idx - 1
+    }, () => {
+      this.setState({
+        current: this.props.response.data[this.state.idx]
+      });
+    });
+  }
+
   render() {
 
     const contentStyle = {
@@ -43,7 +68,9 @@ class Yelp extends React.Component {
     return (
       <div>
         <div className="ui centered grid">
-          <div style={{color: 'white', marginBottom: '30px', textAlign: 'center'}} className="ui centered row">{this.props.response.text}</div>
+          <i className="inverted arrow left icon" onClick={this.backRestaurant}></i>
+
+          <div style={{color: 'white', marginBottom: '30px', textAlign: 'center'}} className="ui centered row">{this.state.current.text}</div>
           <div className="ui six wide column">
             <div className="ui centered row">
               <div className="ui segment">
@@ -58,17 +85,17 @@ class Yelp extends React.Component {
                       return <i className={star + " icon"}></i>;
                     })}
                   </div>
-                  <img style={{maxHeight: '300px'}} src={this.props.response.data.image}/>
+                  <img style={{maxHeight: '300px'}} src={this.state.current.image}/>
                 </div>
-                <div style={contentStyle}>{this.props.response.data.address}</div>
-                <div style={contentStyle}>{this.props.response.data.phone}</div>
+                <div style={contentStyle}>{this.state.current.address}</div>
+                <div style={contentStyle}>{this.state.current.phone}</div>
                 <div style={contentStyle}>  
-                  <a href={this.props.response.data.website}>More Information about {this.props.response.data.name}</a>
+                  <a href={this.state.current.website}>More Information about {this.state.current.name}</a>
                 </div>
               </div>
             </div>
           </div>
-          <i className="inverted arrow right icon"></i>
+          <i className="inverted arrow right icon" onClick={this.nextRestaurant}></i>
         </div>
       </div>
     );
@@ -76,20 +103,3 @@ class Yelp extends React.Component {
 }
 
 export default Yelp;
-
-      
-
-      // <div className="ui centered item">
-      //     <div className="ui medium circular image">
-      //       <img src={response.data.image}/>
-      //     </div>
-      //     <div className="ui content">
-      //     <div className="ui description" style={contentStyle}>Rating: {response.data.rating}</div>
-      //     <div className="ui description" style={contentStyle}>Price: {response.data.price}</div>
-      //     <div className="ui description" style={contentStyle}>Address: {response.data.address}</div>
-      //     <div className="ui description" style={contentStyle}>Phone Number: {response.data.phone}</div>
-      //     <div className="ui description" style={contentStyle}>  
-      //     <a href={response.data.website}>More Information about {response.data.name}</a>
-      //     </div>
-      //     </div>
-      // </div>

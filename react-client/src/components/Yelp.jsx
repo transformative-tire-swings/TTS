@@ -68,9 +68,13 @@ class Yelp extends React.Component {
     return (
       <div>
         <div className="ui centered grid">
-          <i className="inverted arrow left icon" onClick={this.backRestaurant}></i>
 
           <div style={{color: 'white', marginBottom: '30px', textAlign: 'center'}} className="ui centered row">{this.state.current.text}</div>
+
+          <div className="ui two wide column" style={{textAlign: 'center', padding: '170px 0'}}>
+            <i className="inverted arrow left icon" onClick={this.backRestaurant}></i>
+          </div>
+
           <div className="ui six wide column">
             <div className="ui centered row">
               <div className="ui segment">
@@ -82,7 +86,7 @@ class Yelp extends React.Component {
                   </div>
                   <div style={{marginLeft: '0'}} className="ui yellow ribbon label">
                     {stars.map((star, index) => {
-                      return <i className={star + " icon"}></i>;
+                      return <i className={star + ' icon'}></i>;
                     })}
                   </div>
                   <img style={{maxHeight: '300px'}} src={this.state.current.image}/>
@@ -95,7 +99,10 @@ class Yelp extends React.Component {
               </div>
             </div>
           </div>
-          <i className="inverted arrow right icon" onClick={this.nextRestaurant}></i>
+
+          <div className="ui two wide column" style={{textAlign: 'center', padding: '170px 0'}}>
+            <i className="inverted arrow right icon" onClick={this.nextRestaurant}></i>
+          </div>
         </div>
       </div>
     );

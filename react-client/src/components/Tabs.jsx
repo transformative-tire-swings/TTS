@@ -24,10 +24,10 @@ const panes = [
       </Tab.Pane>,
   },
   {
-    menuItem: { key: 'users', icon: 'marker', content: 'Goats' },
+    menuItem: { key: 'users', icon: 'smile', content: 'Goats' },
     render: () =>
       <Tab.Pane>
-        <Image fluid src='https://media.giphy.com/media/13EklP8BpX3m80/giphy.gif' />
+        <Image fluid src='../libs/goat.gif' style={{height: '65%'}} />
       </Tab.Pane>,
   },
 ];

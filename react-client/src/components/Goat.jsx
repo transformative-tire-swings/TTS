@@ -10,7 +10,7 @@ const Goat = ({response}) => {
         <div className="ui centered six wide column">
           <div className="ui segment">
             <div className="ui fluid image">
-                <img style={{maxHeight: '300px'}} src='https://media.giphy.com/media/13EklP8BpX3m80/giphy.gif'/>
+              <img style={{maxHeight: '300px'}} src='../libs/goat.gif'/>
             </div>
           </div>
         </div>
@@ -20,4 +20,3 @@ const Goat = ({response}) => {
 };
 
 export default Goat;
-

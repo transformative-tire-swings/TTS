@@ -9,13 +9,12 @@
 
 .fullWidthTransition {
   width: 50%;
-  transition: all 0.5s;
-  transition-timing-function: linear;
+  transition: all 0.25s;
+  transition-timing-function: ease-out;
 }
 
 .fullWidthTransition:hover {
   width: 100%;
-  /*transform: scale(1.25);*/
 }
 
 /* App background */

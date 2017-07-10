@@ -15,10 +15,12 @@ class Yelp extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      idx: 0,
-      current: nextProps.response.data[0]
-    });
+    if (this.props.response.data !== nextProps.response.data) {
+      this.setState({
+        idx: 0,
+        current: nextProps.response.data[0]
+      });
+    }
   }
 
   nextRestaurant() {
